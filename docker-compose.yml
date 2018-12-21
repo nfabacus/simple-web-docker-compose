@@ -1,0 +1,20 @@
+# version specifies the version of docker-compose
+version: '3'
+# services are (types of) containers
+# specify the names of services
+
+#services:
+#  redis-server:
+#    image: 'redis'  -- use this image
+#  node-app:
+#    build: .    --- build using the current directory.
+#    ports:
+#      - "4001:8081" --- '-' means an array.  "PORT on local to PORT inside container"
+
+services:
+  redis-server:
+    image: 'redis'
+  node-app:
+    build: .
+    ports:
+      - "4001:8081"
