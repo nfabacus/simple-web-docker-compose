@@ -7,6 +7,7 @@ version: '3'
 #  redis-server:
 #    image: 'redis'  -- use this image
 #  node-app:
+#    restart: always  -- (this is optional) in case of the container (app) stops or crashes, "no" for never restart, always, on-failure, unless-stopped
 #    build: .    --- build using the current directory.
 #    ports:
 #      - "4001:8081" --- '-' means an array.  "PORT on local to PORT inside container"
@@ -15,6 +16,7 @@ services:
   redis-server:
     image: 'redis'
   node-app:
+    restart: always  #in case of the container (app) stops or crashes, no
     build: .
     ports:
       - "4001:8081"
